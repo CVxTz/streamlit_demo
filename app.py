@@ -1,12 +1,11 @@
 import time
 
 import numpy as np
+import plotly.express as px
 import streamlit as st
 from keras.datasets import mnist
-import plotly.express as px
 
 from models import get_model_mlp, get_model_cnn
-
 
 colors = [
     "#1f77b4",  # muted blue
@@ -49,10 +48,13 @@ status_text = st.empty()
 plotly_chart_1 = st.empty()
 plotly_chart_2 = st.empty()
 
-
 option = st.sidebar.selectbox(
     "Which architecture do you want to use ?", ("None", "MLP", "CNN")
 )
+
+markdown = st.sidebar.markdown(
+    "#### Classify Mnist Digits and Display their representation"
+    "![](https://warwick.ac.uk/fac/cross_fac/complexity/study/msc_and_phd/co902/2013_2014/resources/mnisttrain.png)")
 
 x_train, y_train, x_test, y_test = get_data(flatten=(option == "MLP"))
 
