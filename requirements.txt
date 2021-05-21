@@ -1,5 +1,5 @@
 Keras==2.3.1
 plotly==4.5.4
-tensorflow==2.0.1
+tensorflow==2.5.0
 streamlit==0.56.0
 numpy==1.17.3
